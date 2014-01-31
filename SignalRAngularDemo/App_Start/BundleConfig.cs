@@ -24,8 +24,7 @@ namespace SignalRAngularDemo
             ));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                "~/Scripts/angular.js",
-                "~/Scripts/angular-mocks.js"
+                "~/Scripts/angular.js"
             ));
 
             bundles.Add(new ScriptBundle("~/bundles/widgetApp").Include(

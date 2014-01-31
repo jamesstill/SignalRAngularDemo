@@ -18,8 +18,8 @@ app.service('widgetSvc', function ($, $rootScope) {
         // start connection
         connection.start();
 
-        this.proxy.on('acceptWidget', function (data) {
-            $rootScope.$emit("acceptWidget", data);
+        this.proxy.on('newWidget', function (data) {
+            $rootScope.$emit("newWidget", data);
         });
     };
 

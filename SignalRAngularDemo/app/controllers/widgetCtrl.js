@@ -14,7 +14,7 @@ function WidgetCtrl($scope, widgetSvc, $rootScope) {
 
     widgetSvc.initialize();
 
-    $scope.$parent.$on("acceptWidget", function (e, data) {
+    $scope.$parent.$on("newWidget", function (e, data) {
         $scope.$apply(function () {
             addWidget(data);
         });

@@ -18,7 +18,7 @@ namespace SignalRAngularDemo.Controllers
             // validate and add to database in a real app
 
             // notify all connected clients
-            Hub.Clients.All.acceptWidget(item);
+            Hub.Clients.All.newWidget(item);
             
             // return the item inside of a 201 response
             return Request.CreateResponse(HttpStatusCode.Created, item);
