@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Sender";
+}
+
+<h2>Sender</h2>
+
+<p>This view creates a new widget in the application.</p>
+
+<div>
+    Color: <input id="widget-color" type="text"/><br />
+    Shape: <input id="widget-shape" type="text"/>
+    <input type="button" id="send-button" value="Send" />
+</div>
+
+@section Scripts {
+
+    <script>
+
+        $('#send-button').click(function () {
+            var id = getRandomInt(99);
+            var color = $('#widget-color').val();
+            var shape = $('#widget-shape').val();
+
+            $.ajax({
+                url: "/api/widget",
+                data: { 'id': id, 'color': color, 'shape': shape },
+                type: "POST"
+            });
+
+            // reset input fields
+            $('#widget-shape').val('');
+            $('#widget-color').val('').focus();        
+        });
+
+        // generate a random integer
+        function getRandomInt(range) {
+            return Math.floor(Math.random() * range);
+        }
+
+    </script>
+}
+
+
